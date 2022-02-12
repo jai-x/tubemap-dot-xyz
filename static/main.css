@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "Railway";
+  src: url("/static/railway.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Map Elements */
+  --color-grid:       #0CC2F3;
+  --color-gray:       #ECECED;
+  --color-gray-light: #F5F6F6;
+  /* Tube Lines */
+  --color-bakerloo:     #A45A2A; /* Pantone 470 */
+  --color-central:      #DA291C; /* Pantone 485 */
+  --color-circle:       #FFCD00; /* Pantone 116 */
+  --color-district:     #007A33; /* Pantone 356 */
+  --color-overground:   #FFA300; /* Pantone 137 */
+  --color-h-and-c:      #E89CAE; /* Pantone 197 */
+  --color-jubilee:      #7C878E; /* Pantone 430 */
+  --color-metropolitan: #840B55; /* Pantone 235 */
+  --color-nothern:      #2D2926; /* Pantone Black */
+  --color-piccadilly:   #10069F; /* Pantone 072 */
+  --color-victoria:     #00A3E0; /* Pantone 299 */
+  --color-w-and-c:      #6ECEB2; /* Pantone 338 */
+  --color-dlr:          #00B2A9; /* Pantone 326 */
+  --color-tramlink:     #78BE20; /* Pantone 368 */
+  --color-thameslink:   #E56DB1; /* Pantone 218 */
+  --color-air-line:     #C8102E; /* Pantone 186 */
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Railway";
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  /* Tube Map is a 9 x 6 regular grid with the bottom row being taller
+   * Making each grid cell 300x300 and the bottom row 300x400 */
+  width: 2700px; /* 300px x 9 */
+  min-width: 2700px;
+  max-width: 2700px;
+  height: 1900px; /* 300px x 5 + 400px */
+  min-height: 1900px;
+  max-height: 1900px;
+  overflow: hidden;
+}
+
+.grid-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-grid);
+  font-size: 25px;
+}
+
+.grid-labels span {
+  background-color: white;
+  height: 23px; /* Weird font baseline makes span elements too tall */
+  padding: 2px 1px 1px 1px;
+}
+
+.grid-label-row {
+  position: absolute;
+  left: 144px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 283px;
+  align-items: center;
+}
+.grid-label-row.top { top: -9px; }
+.grid-label-row.bottom { top: 1891px; }
+
+.grid-label-col {
+  position: absolute;
+  top: 139px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 277px;
+}
+.grid-label-col.left { left: -9px; }
+.grid-label-col.right { left: 2692px; }
+
+.grid-label-f {
+  position: absolute;
+  top: 1680px;
+}
+.grid-label-f.left { left: -6px; }
+.grid-label-f.right { left: 2694px; }
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 2px solid var(--color-grid);
+  border-left: 2px solid var(--color-grid);
+  display: grid;
+  grid-template-rows: repeat(5, 300px) 400px;
+  grid-template-columns: repeat(9, 300px);
+}
+
+.grid div {
+  border-bottom: 2px solid var(--color-grid);
+  border-right: 2px solid var(--color-grid);
+}
+
+.line {
+  position: absolute;
+  top: 1000px;
+  left: 1000px;
+  background-color: var(--color-central);
+  width: 100px;
+  height: 10px;
+}
+
+.interchange {
+  position: absolute;
+  top: 1000px;
+  left: 1000px;
+  background-color: white;
+  height: 25px;
+  width: 25px;
+  border-color: black;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 15px;
+}

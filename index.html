@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Page meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- Site meta -->
+    <meta name="application-name" content="TubeMap.xyz">
+    <meta name="Description" content="The simple and interactive Tube Map">
+    <meta name="keywords" content="crashfm, crash fm, burnout, burnout3, burnout 3, burnout 3 takedown, burnout paradise, dj stryker, stryker, radio, live, music, entertainment">
+    <meta name="keywords" content="tube, map, london, tfl, underground, oyster, transport for london">
+    <link rel="canonical" href="https://tubemap.xyz/">
+    <!-- Opengraph -->
+    <meta property="og:title" content="TubeMap.xyz">
+    <meta property="og:description" content="The simple and interactive Tube Map">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tubemap.xyz/">
+    <meta property="og:image" content="">
+    <!-- Preloads -->
+    <!-- <link rel="preload" href="..." as="..."> -->
+    <!-- Page setup -->
+    <title>TubeMap.xyz</title>
+    <link rel="icon" type="image/gif" href="">
+    <link rel="stylesheet" href="/static/main.css">
+    <script src="https://unpkg.com/@panzoom/panzoom@4.4.4/dist/panzoom.min.js"></script>
+    <!--<script src="/main.js" defer></script>-->
+  </head>
+  <body>
+    <main>
+      <div class="map">
+        <div class="zones"></div>
+        <div class="grid">
+          <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
+          <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
+          <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
+          <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
+          <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
+          <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div> <div></div>
+        </div>
+        <div class="line"></div>
+        <div class="interchange"></div>
+      </div>
+      <div class="grid-labels">
+        <div class="grid-label-row top">
+          <span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span> <span>6</span> <span>7</span> <span>8</span> <span>9</span>
+        </div>
+        <div class="grid-label-row bottom">
+          <span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span> <span>6</span> <span>7</span> <span>8</span> <span>9</span>
+        </div>
+        <div class="grid-label-col left">
+          <span>A</span> <span>B</span> <span>C</span> <span>D</span> <span>E</span>
+        </div>
+        <div class="grid-label-col right">
+          <span>A</span> <span>B</span> <span>C</span> <span>D</span> <span>E</span>
+        </div>
+        <span class="grid-label-f left">F</span>
+        <span class="grid-label-f right">F</span>
+      </div>
+    </main>
+  </body>
+  <script>
+    const main = document.querySelector('main');
+    const panzoom = Panzoom(main);
+  </script>
+</html>
